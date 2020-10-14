@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Chat.css'
 
 function Chat() {
+    const sendMessage = (e) => {
+        e.preventDefault();
+        setInput('')
+    }
+    const [Input, setInput] = useState('')
     return (
         <div className="chat">
             {/* ChatHeader */}
@@ -11,6 +16,10 @@ function Chat() {
             </div>
             {/* ChatMessages */}
             {/* ChatInput */}
+            <div className="chat__input">
+                <input placeholder="iMessage" value={Input} onChange={(e) => setInput(e.target.value)} type="text" />
+                <button onClick={sendMessage}>Send Message</button>
+            </div>
         </div>
     )
 }
