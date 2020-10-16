@@ -8,6 +8,7 @@ import { selectChatId, selectChatName } from '../../../features/chatSlice';
 import db from '../../../firebase';
 import firebase from 'firebase';
 import { selectUser } from '../../../features/userSlice';
+import FlipMove from 'react-flip-move'
 
 function Chat() {
     const [Input, setInput] = useState('');
@@ -59,9 +60,11 @@ function Chat() {
 
             {/* ChatMessages */}
             <div className="chat__messages">
-                {Messages.map(({ id, data }) => (
-                    <Message key={id} contents={data} />
-                ))}
+                <FlipMove>
+                    {Messages.map(({ id, data }) => (
+                        <Message key={id} contents={data} />
+                    ))}
+                </FlipMove>
             </div>
 
             {/* ChatInput */}
