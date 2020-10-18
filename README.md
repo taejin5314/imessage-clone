@@ -40,4 +40,6 @@ Below is the link for my project. Go ahead and check this out!
 
 https://imessage-clone-a8014.web.app/
 
+Make sure that logout by clicking the logout button.
+
 ## Thank you!
